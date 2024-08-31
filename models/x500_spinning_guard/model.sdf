@@ -144,5 +144,12 @@
       <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
       <motorType>velocity</motorType>
     </plugin>
+
+    <!-- Add the Joint State Publisher system -->
+    <plugin filename="gz-sim-joint-state-publisher-system" name="gz::sim::systems::JointStatePublisher">
+        <joint_name>propeller_guard_joint</joint_name>
+        <topic>/joint_states</topic>
+    </plugin>
+
   </model>
 </sdf>
