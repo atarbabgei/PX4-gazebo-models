@@ -138,6 +138,7 @@
      <sensor name="propeller_guard_joint_ft_sensor" type="force_torque">
         <update_rate>1000</update_rate>
         <always_on>true</always_on>
+        <topic>~/propeller_guard_joint/force_torque</topic>
         <force_torque>
           <frame>child</frame>
           <measure_direction>child_to_parent</measure_direction>
@@ -147,6 +148,7 @@
 
     <!-- Add the Joint State Publisher system -->
     <plugin filename="gz-sim-joint-state-publisher-system" name="gz::sim::systems::JointStatePublisher">
+        <topic>~/propeller_guard_joint/joint_state</topic>
         <joint_name>propeller_guard_joint</joint_name>
     </plugin>
 
