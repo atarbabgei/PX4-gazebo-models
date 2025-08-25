@@ -14,6 +14,7 @@
       <pose relative_to="base_link">0 0 -0.079 0 1.57 0</pose>
     </include>
 
+
     <!-- Fixed joint connecting base_link to lw20_link -->
     <joint name="lidar_model_joint" type="fixed">
       <parent>base_link</parent>
@@ -217,11 +218,15 @@
       </sensor>
     </joint>
 
+    <!-- System Plugins -->
     <!-- Joint State Publisher Plugin -->
     <plugin filename="gz-sim-joint-state-publisher-system" name="gz::sim::systems::JointStatePublisher">
       <topic>~/propeller_guard_joint/joint_state</topic>
       <joint_name>propeller_guard_joint</joint_name>
     </plugin>
+
+    <!-- Force-Torque System Plugin -->
+    <plugin name="gz::sim::systems::ForceTorque" filename="gz-sim-forcetorque-system"/>
 
   </model>
 </sdf>
