@@ -44,6 +44,7 @@
 
       <!-- Lidar Sensor Definition -->
       <sensor name='lidar' type='gpu_lidar'>
+        <gz_frame_id>lidar_sensor_link</gz_frame_id>
         <pose>0 0 0 3.14 0 0</pose>
         <update_rate>50</update_rate>
         <ray>
@@ -109,6 +110,7 @@
 
       <!-- Force-Torque Sensor on Fixed Joint -->
       <sensor name="propeller_guard_fixed_joint_ft_sensor" type="force_torque">
+        <gz_frame_id>propeller_guard_fixed_link</gz_frame_id>
         <update_rate>1000</update_rate>
         <always_on>true</always_on>
         <topic>~/propeller_guard_fixed_joint/force_torque</topic>
@@ -204,6 +206,7 @@
 
       <!-- Force-Torque Sensor on Revolute Joint -->
       <sensor name="propeller_guard_revolute_joint_ft_sensor" type="force_torque">
+        <gz_frame_id>propeller_guard</gz_frame_id>
         <update_rate>1000</update_rate>
         <always_on>true</always_on>
         <topic>~/propeller_guard_joint/force_torque</topic>
