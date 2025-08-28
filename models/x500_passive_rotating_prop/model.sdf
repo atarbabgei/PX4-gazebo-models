@@ -187,6 +187,16 @@
           </cylinder>
         </geometry>
       </collision>
+
+      <!-- Contact Sensor -->
+      <sensor name="propeller_guard_contact_sensor" type="contact">
+        <gz_frame_id>propeller_guard</gz_frame_id>
+        <update_rate>50</update_rate>
+        <always_on>true</always_on>
+        <contact>
+          <collision>propeller_guard_collision</collision>
+        </contact>
+      </sensor>
     </link>
 
     <!-- Revolute Joint from fixed_link to propeller_guard -->
@@ -227,6 +237,9 @@
 
     <!-- Force-Torque System Plugin -->
     <plugin name="gz::sim::systems::ForceTorque" filename="gz-sim-forcetorque-system"/>
+
+    <!-- Contact System Plugin -->
+    <plugin name="gz::sim::systems::Contact" filename="gz-sim-contact-system"/>
 
   </model>
 </sdf>
